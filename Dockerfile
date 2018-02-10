@@ -85,6 +85,8 @@ COPY restore.sh /sbin/restore
 RUN chmod +x /sbin/backup /sbin/restore
 VOLUME /var/backups
 
+RUN ln -s /sbin/backup /etc/cron.daily/cacti-backup
+
 
 # to allow access from outside of the container  to the container service
 # at that ports need to allow access from firewall if need to access it outside of the server. 
